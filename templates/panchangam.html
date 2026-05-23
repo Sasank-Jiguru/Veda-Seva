@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>పంచాంగం</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+margin:0;
+display:flex;
+}
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#4d1a1a;
+padding:20px;
+position:fixed;
+overflow:auto;
+}
+
+.sidebar h1{
+color:orange;
+text-align:center;
+}
+
+.sidebar a{
+display:block;
+padding:15px;
+color:white;
+text-decoration:none;
+margin-top:10px;
+border-radius:10px;
+}
+
+.sidebar a:hover{
+background:orange;
+}
+
+.main{
+margin-left:270px;
+padding:20px;
+width:100%;
+}
+
+.form-box{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card h2{
+color:#b22222;
+margin-bottom:10px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid gray;
+}
+
+button{
+background:#b22222;
+color:white;
+border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h1>🪔 వేద సేవ</h1>
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/devotees">👥 Bhaktulu</a>
+
+<a href="/panchangam">📅 Panchangam</a>
+
+<a href="/japalu">📿 Japalu</a>
+
+<a href="/homalu">🔥 Homalu</a>
+
+<a href="/doshalu">🪔 Doshalu</a>
+
+<a href="/reminders">🔔 Reminders</a>
+
+<a href="/settings">⚙️ Settings</a>
+
+<a href="/logout">🚪 Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>📅 Dynamic Panchangam</h1>
+
+<div class="form-box">
+
+<form method="POST">
+
+<label>తేదీ ఎంచుకోండి</label>
+
+<input type="date" name="date" required>
+
+<button type="submit">
+
+పంచాంగం చూడండి
+
+</button>
+
+</form>
+
+</div>
+
+{% if data %}
+
+<div class="card">
+
+<h2>ఎంచుకున్న తేదీ</h2>
+
+<p>{{ selected_date }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>తిథి</h2>
+
+<p>{{ data.tithi }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>వారం</h2>
+
+<p>{{ data.varam }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>నక్షత్రం</h2>
+
+<p>{{ data.nakshatram }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>రాహుకాలం</h2>
+
+<p>{{ data.rahukalam }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>యమగండం</h2>
+
+<p>{{ data.yamagandam }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>దుర్ముహూర్తం</h2>
+
+<p>{{ data.durmuhurtham }}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

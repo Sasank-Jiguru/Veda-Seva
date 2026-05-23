@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>జాతకం</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+margin:0;
+display:flex;
+}
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#4d1a1a;
+padding:20px;
+position:fixed;
+overflow:auto;
+}
+
+.sidebar h1{
+color:orange;
+text-align:center;
+}
+
+.sidebar a{
+display:block;
+padding:15px;
+color:white;
+text-decoration:none;
+margin-top:10px;
+border-radius:10px;
+}
+
+.sidebar a:hover{
+background:orange;
+}
+
+.main{
+margin-left:270px;
+padding:20px;
+width:100%;
+}
+
+.form-box{
+background:white;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card h2{
+color:#b22222;
+margin-bottom:10px;
+}
+
+input,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid gray;
+}
+
+button{
+background:#b22222;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h1>🪔 వేద సేవ</h1>
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/devotees">👥 Bhaktulu</a>
+
+<a href="/panchangam">📅 Panchangam</a>
+
+<a href="/horoscope">🔮 Horoscope</a>
+
+<a href="/japalu">📿 Japalu</a>
+
+<a href="/homalu">🔥 Homalu</a>
+
+<a href="/doshalu">🪔 Doshalu</a>
+
+<a href="/reminders">🔔 Reminders</a>
+
+<a href="/settings">⚙️ Settings</a>
+
+<a href="/logout">🚪 Logout</a>
+
+</div>
+
+<div class="main">
+
+<h1>🔮 జాతక విశ్లేషణ</h1>
+
+<div class="form-box">
+
+<form method="POST">
+
+<label>పుట్టిన తేదీ</label>
+
+<input type="date"
+name="dob"
+required>
+
+<label>పుట్టిన సమయం</label>
+
+<input type="time"
+name="birthtime"
+required>
+
+<label>పుట్టిన స్థలం</label>
+
+<input type="text"
+name="birthplace"
+placeholder="ఉదా: హైదరాబాద్"
+required>
+
+<button type="submit">
+
+జాతకం చూడండి
+
+</button>
+
+</form>
+
+</div>
+
+{% if result %}
+
+<div class="card">
+
+<h2>నక్షత్రం</h2>
+
+<p>{{ result.nakshatram }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>రాశి</h2>
+
+<p>{{ result.rasi }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>లగ్నం</h2>
+
+<p>{{ result.lagnam }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>సంభవించే దోషం</h2>
+
+<p>{{ result.dosham }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>సూచించిన పరిహారం</h2>
+
+<p>{{ result.pariharam }}</p>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
