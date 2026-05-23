@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>Japalu</title>
 
 <style>
 
 body{
 font-family:Arial;
+margin:0;
+display:flex;
 background:#f4f4f4;
+}
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#4d1a1a;
+padding:20px;
+position:fixed;
+}
+
+.sidebar h1{
+color:orange;
+}
+
+.sidebar a{
+display:block;
+color:white;
+text-decoration:none;
+padding:15px;
+margin-top:10px;
+border-radius:10px;
+}
+
+.sidebar a:hover{
+background:orange;
+}
+
+.main{
+margin-left:270px;
 padding:30px;
+width:100%;
 }
 
 .card{
@@ -23,6 +57,32 @@ margin-bottom:20px;
 </head>
 
 <body>
+
+<div class="sidebar">
+
+<h1>🪔 వేద సేవ</h1>
+
+<a href="/dashboard">🏠 Dashboard</a>
+
+<a href="/devotees">👥 Bhaktulu</a>
+
+<a href="/bookings">📅 Bookings</a>
+
+<a href="/japalu">📿 Japalu</a>
+
+<a href="/homalu">🔥 Homalu</a>
+
+<a href="/doshalu">🪔 Doshalu</a>
+
+<a href="/reminders">🔔 Reminders</a>
+
+<a href="/settings">⚙️ Settings</a>
+
+<a href="/logout">🚪 Logout</a>
+
+</div>
+
+<div class="main">
 
 <h1>📿 జపాలు</h1>
 
@@ -39,6 +99,8 @@ margin-bottom:20px;
 <h2>శని జపం</h2>
 
 <p>11 సార్లు చేయాలి</p>
+
+</div>
 
 </div>
 
