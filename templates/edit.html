@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Edit</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+padding:30px;
+}
+
+form{
+background:white;
+padding:20px;
+border-radius:15px;
+max-width:500px;
+margin:auto;
+}
+
+input,select,button{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
+border:1px solid gray;
+}
+
+button{
+background:#b22222;
+color:white;
+border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1 align="center">✏️ Edit Devotee</h1>
+
+<form method="POST" action="/update/{{ devotee[0] }}">
+
+<input type="text"
+name="name"
+value="{{ devotee[1] }}">
+
+<input type="text"
+name="phone"
+value="{{ devotee[2] }}">
+
+<select name="dosha">
+
+<option>{{ devotee[7] }}</option>
+
+<option>కుజ దోషం</option>
+
+<option>శని దోషం</option>
+
+<option>కాలసర్ప దోషం</option>
+
+<option>పితృ దోషం</option>
+
+</select>
+
+<button type="submit">
+
+Update చేయండి
+
+</button>
+
+</form>
+
+</body>
+
+</html>

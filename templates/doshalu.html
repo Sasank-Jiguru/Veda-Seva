@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Doshalu</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f4f4;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🪔 దోష పరిహారాలు</h1>
+
+{% for key, value in doshalu.items() %}
+
+<div class="card">
+
+<h2>{{ key }}</h2>
+
+<p>{{ value }}</p>
+
+</div>
+
+{% endfor %}
+
+</body>
+
+</html>
